@@ -35,6 +35,9 @@
                 "prod": "PrestTEC\\CodeIgniter_Cli\\_Config\\Prod"
             }
         },
+        "branch-alias": {
+            "dev-master": "1.0.0"
+        }
     },
     "require-dev": {
         "satooshi/php-coveralls": "0.6.*"

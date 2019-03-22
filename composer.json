@@ -14,6 +14,7 @@
             "homepage": "https://github.com/presttec/codeigniter-cli"
         }
     ],
+	"minimum-stability": "dev",	
     "require": {
         "php": ">=5.4.0",
         "aura/cli-kernel": "~2.0",
@@ -36,7 +37,7 @@
             }
         },
         "branch-alias": {
-            "dev-master": ""
+            "dev-master": "1.0.x-dev"
         }
     },
     "require-dev": {

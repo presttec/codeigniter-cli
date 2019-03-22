@@ -1,0 +1,30 @@
+language: php
+
+php:
+  - 5.4
+  - 5.5
+  - 5.6
+
+before_script:
+  - pwd
+  - export cwd=`pwd`
+  - composer self-update
+  - cd ..
+  - pwd
+  - composer create-project presttec/codeigniter-composer-installer codeigniter
+  - cd codeigniter
+  - composer require presttec/codeigniter-cli:1.0.x@dev --dev
+  - mv vendor/presttec/codeigniter-cli vendor/presttec/codeigniter-cli.tmp
+  - mv "$cwd" vendor/presttec/codeigniter-cli
+  - php vendor/presttec/codeigniter-cli/install.php
+  - cd vendor/presttec/codeigniter-cli
+  - pwd
+  - composer install
+
+script:
+  - pwd
+  - phpunit --coverage-text
+
+after_script:
+  - pwd
+  - php vendor/bin/coveralls -v
